@@ -1,0 +1,4 @@
+<span><a href="{% url 'index' %}">Home</a></span>
+<span><a href="{% url 'about' %}">about</a></span>
+<span><a href="{% url 'register' %}">register</a></span>
+{% if user.is_authenticated %} <span><a href="{% url 'logout' %}">logout</a></span> {% else %}<span><a href="{% url 'login' %}">login</a></span>{% endif %}

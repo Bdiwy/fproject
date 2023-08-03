@@ -1,0 +1,107 @@
+{% include 'navbar.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with Meyawo landing page.">
+    <meta name="author" content="Devcrud">
+    <title>project</title>
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link rel="stylesheet" href="{% static '/vendors/themify-icons/css/themify-icons.css' %}">
+<link rel="stylesheet" href="{% static '/css/meyawo.css' %}">
+  <link rel="stylesheet" href="{% static '/css/adminlte.min.css' %}">
+
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+    <header id="home" class="header">
+        <div class="overlay"></div>            
+    </header>
+    <section class="section pt-0" id="about">
+        <div class="container text-center">
+            <div class="about" >
+                <div class="about-caption">
+                    <h2 class="section-title mb-3">_____About-us_____</h2>
+                    <p>-
+                        hello if {% if user.is_authenticated %}<b>{{user.username}}</b>{% endif %}
+                        Apple Inc. is an American multinational technology company headquartered in Cupertino, California. Apple is the world's largest technology company by revenue, with US$394.3 billion in 2022 revenue.[6]
+                        As of March 2023, Apple is the world's biggest company by market capitalization.[7] As of June 2022, Apple is the fourth-largest personal computer vendor by unit sales and the second-largest mobile phone manufacturer in the world.
+                        It is considered one of the Big Five American information technology companies, alongside Alphabet (parent company of Google), Amazon, Meta Platforms, and Microsoft.
+                        culpa! Quasi quibusdam hic recusandae delectus velit officiis explicabo voluptatibus! Nemo esse similique, voluptates labore distinctio, placeat explicabo facilis molestias, blanditiis culpa iusto voluptatem ratione eligendi a,
+                         quia temporibus velit vero ipsa sint ex voluptatum expedita aliquid! Debitis, nam!              
+                    </p>
+                </div>              
+            </div>
+        </div>
+    </section> 
+    <section class="section" id="service">
+        <div class="container text-center">
+            <p class="section-subtitle">What We Do ?</p>
+            <h6 class="section-title mb-6">Service</h6>
+            <id = "service" div class="row">
+                {% for f in feat %}          
+                <div class="col-md-6 col-lg-3">  
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="{% static '/imgs/pencil-case.svg' %}" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page" class="icon">
+                            <h6 class="title">{{f.name}}</h6>
+                            <p class="subtitle">{{f.detiels}}</p>
+                            {% if f.name == 'herooooooooo' %}
+                            <p >shit</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div><!-- end of row -->
+
+        </div>
+    </section><!-- end of service section -->
+
+    <!-- portfolio section -->
+    <section class="section" id="portfolio">
+
+    <!-- contact section -->
+    <section class="section" id="contact">
+        <div class="container text-center">
+            <p class="section-subtitle">How can you communicate?</p>
+            <h1 class="section-title mb-5">Contact-us</h1>
+            <!-- contact form -->
+            <form action="" method="post" class="contact-form col-md-10 col-lg-8 m-auto">
+                <div class="form-row">
+                    {% csrf_token %}
+                    <div class="form-group col-sm-6">
+                        <input type="text" size="50" name ="name" class="form-control" placeholder="Your Name" required>                 
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <input type="email"  name ="email" class="form-control" placeholder="Enter Email"requried>                 
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <textarea name="comment" name ="comment" id="comment" rows="6"   class="form-control" placeholder="Write Something"></textarea>
+                    </div>
+                    <div class="form-group col-sm-12 mt-3">
+                        <input type="submit" class="btn btn-outline-primary rounded">                  
+                    </div>
+                </div>  
+            </form><!-- end of contact form -->
+        </div>
+        
+    </section><!-- end of contact section -->	
+	<!-- core  -->
+    <script src="{% static '/vendors/jquery/jquery-3.4.1.js' %}"></script>
+    <script src="{% static '/vendors/bootstrap/bootstrap.bundle.js' %}"></script>
+
+    <!-- bootstrap 3 affix -->
+	<script src="{% static '/vendors/bootstrap/bootstrap.affix.js' %}"></script>
+
+    <!-- Meyawo js -->
+    <script src="{% static '/js/meyawo.js"' %}"></script>
+
+</body>
+
+</html>
+
+{% endblock content %}
