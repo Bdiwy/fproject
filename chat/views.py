@@ -4,6 +4,7 @@ from django.contrib.auth.models import User,auth
 from django.contrib import messages
 from .models import feature
 from .models import other,Contact
+
 # Create your views here.
 
 
@@ -80,3 +81,4 @@ def post(request,pk):
 def center(request):
     post=[1,2,3,4,5,6,7,8]
     return render(request,'center.html',{'post':post})
+

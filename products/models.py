@@ -16,6 +16,10 @@ class prod(models.Model):
     class  Meta:
         db_table = ''
         managed = True
-        verbose_name = '7amada'
-        verbose_name_plural = '7amadas'
+        verbose_name = 'prod'
+        verbose_name_plural = 'prod'
         ordering=['price']
+
+
+
+# Create your models here.

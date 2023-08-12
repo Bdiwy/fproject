@@ -2,5 +2,5 @@
 
 {% comment %} <span><a href="{% url 'product' %}">{{f}}</a></span> {% endcomment %}
 {% for x in f %}
-{{x.name}}  {{x.price}} <br>
+{{x.name}}  {{x.price}} <img src="{{x.img.url}}"> <br>
 {% endfor %}
